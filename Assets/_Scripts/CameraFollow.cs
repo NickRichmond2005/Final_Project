@@ -12,13 +12,6 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 playerPosition = player.transform.position;
 
-        if (playerPosition.y + yOffset > 128)
-        {
-            transform.position = new Vector3(transform.position.x, 128 - yOffset, transform.position.z);
-        }
-        else
-        {
-            transform.position = new Vector3(transform.position.x, playerPosition.y + yOffset, transform.position.z);
-        }
+        transform.position = new Vector3(playerPosition.x, transform.position.y, transform.position.z);
     }
 }
