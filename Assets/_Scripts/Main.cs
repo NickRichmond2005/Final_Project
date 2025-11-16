@@ -7,7 +7,7 @@ public class Main : MonoBehaviour
 
     public Timer timer;
 
-    public GameObject FallingRockPrefab;
+    // public GameObject FallingRockPrefab;
 
     public float rockSpawnInterval = 0;
     
@@ -25,7 +25,7 @@ public class Main : MonoBehaviour
         int targetLevel;
         if (LevelCounter.Level == -1)
         {
-            targetLevel = 0;
+            targetLevel = 1;
         } else
         {
             targetLevel = LevelCounter.Level;
@@ -102,7 +102,7 @@ public class Main : MonoBehaviour
         }
         else
         {
-            if (LevelCounter.Level > 0)
+            if (LevelCounter.Level > 1)
             {
                 LevelCounter.SetLevel(LevelCounter.Level - 1);
                 LivesCounter.SetLives(prevCheckPoint.numOfLivesToGive);
@@ -120,7 +120,7 @@ public class Main : MonoBehaviour
 
     void SpawnRock()
     {
-        GameObject rock = Instantiate<GameObject>(FallingRockPrefab);
-        rock.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0, 20, 0);
+        // GameObject rock = Instantiate<GameObject>(FallingRockPrefab);
+        // rock.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0, 20, 0);
     }
 }
