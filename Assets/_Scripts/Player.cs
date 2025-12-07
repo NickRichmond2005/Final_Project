@@ -51,6 +51,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void PickupPowerUp()
+    {
+        // add one live when power-up is picked up
+        LivesCounter.SetLives(LivesCounter.Lives + 1);
+
+    }
+
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
